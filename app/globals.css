@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --neu-bg: #e0e5ec;
+  --neu-shadow-light: #ffffff;
+  --neu-shadow-dark: #b8bec7;
+  --neu-accent: #6366f1;
+  --neu-text: #2d3748;
+  --neu-text-muted: #718096;
+}
+
+@theme inline {
+  --color-background: var(--neu-bg);
+  --color-foreground: var(--neu-text);
+  --color-neu-bg: var(--neu-bg);
+  --color-neu-accent: var(--neu-accent);
+  --color-neu-text: var(--neu-text);
+  --color-neu-text-muted: var(--neu-text-muted);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  background-color: var(--neu-bg);
+  color: var(--neu-text);
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Neumorphic raised surface */
+.neu-raised {
+  background: var(--neu-bg);
+  box-shadow:
+    6px 6px 12px var(--neu-shadow-dark),
+    -6px -6px 12px var(--neu-shadow-light);
+}
+
+/* Neumorphic inset surface */
+.neu-inset {
+  background: var(--neu-bg);
+  box-shadow:
+    inset 4px 4px 8px var(--neu-shadow-dark),
+    inset -4px -4px 8px var(--neu-shadow-light);
+}
+
+/* Stronger raised for cards */
+.neu-raised-lg {
+  background: var(--neu-bg);
+  box-shadow:
+    10px 10px 20px var(--neu-shadow-dark),
+    -10px -10px 20px var(--neu-shadow-light);
+}
+
+/* Active/pressed state */
+.active\:neu-inset:active {
+  box-shadow:
+    inset 4px 4px 8px var(--neu-shadow-dark),
+    inset -4px -4px 8px var(--neu-shadow-light);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--neu-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neu-shadow-dark);
+  border-radius: 3px;
+}
+
+/* Recharts customization */
+.recharts-cartesian-axis-tick-value {
+  fill: var(--neu-text-muted) !important;
+  font-size: 11px;
+}
+.recharts-tooltip-wrapper {
+  outline: none;
+}
